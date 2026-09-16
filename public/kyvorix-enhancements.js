@@ -46,21 +46,4 @@
       });
     }
   });
-
-  // Mobile nav toggle (hamburger button added next to the logo).
-  document.addEventListener('DOMContentLoaded',()=>{
-    document.querySelectorAll('.site-header').forEach(header=>{
-      const toggle=header.querySelector('.nav-toggle');
-      const nav=header.querySelector('nav');
-      if(!toggle||!nav)return;
-      const close=()=>{nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'};
-      toggle.addEventListener('click',()=>{
-        const open=nav.classList.toggle('is-open');
-        toggle.setAttribute('aria-expanded',String(open));
-        toggle.textContent=open?'✕':'☰';
-      });
-      nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
-      document.addEventListener('click',e=>{if(!header.contains(e.target))close()});
-    });
-  });
 })();
