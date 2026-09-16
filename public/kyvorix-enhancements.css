@@ -50,4 +50,24 @@ nav a{color:var(--ink-soft)}nav a:hover{background:rgba(16,42,46,.07);color:var(
 @media(max-width:700px){.tool-page{padding:52px 0 78px}.tool-panel{padding:16px}.tool-actions{flex-direction:column}.tool-actions>*{width:100%;justify-content:center}}
 .about-section{background:#f0eee7;border-color:rgba(16,42,46,.12)}footer{background:var(--paper);border-color:rgba(16,42,46,.12)}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:45px}.hero-console{max-width:600px;transform:none}.hero-copy{max-width:700px}.how-heading{align-items:start;flex-direction:column;gap:18px}}
-@media(max-width:700px){.container{width:min(var(--container),calc(100% - 32px))}.site-header,.nav{height:68px}.site-header nav a:nth-child(2){display:none}.hero{padding:60px 0 68px}.hero h1{font-size:clamp(45px,14vw,68px);letter-spacing:-3px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions a{width:100%}.hero-actions .primary-button{margin-top:0}.trust-row{align-items:flex-start;flex-direction:column;gap:9px}.console-actions{grid-template-columns:1fr}.console-actions a{grid-template-columns:auto 1fr;align-items:center}.console-actions small{grid-column:2}.discovery-row{align-items:start;flex-direction:column}.filter-tabs{width:100%;overflow:auto;flex-wrap:nowrap;padding-bottom:3px}.filter-tab{white-space:nowrap}.tools-section{padding-top:58px}.tools-grid{grid-template-columns:1fr}.how-section{padding:70px 0 78px}.how-grid{grid-template-columns:1fr}.how-card h3{margin-top:24px}.footer-top{align-items:start;flex-direction:column}}
+@media(max-width:700px){.container{width:min(var(--container),calc(100% - 32px))}.site-header,.nav{height:68px}.hero{padding:60px 0 68px}.hero h1{font-size:clamp(45px,14vw,68px);letter-spacing:-3px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions a{width:100%}.hero-actions .primary-button{margin-top:0}.trust-row{align-items:flex-start;flex-direction:column;gap:9px}.console-actions{grid-template-columns:1fr}.console-actions a{grid-template-columns:auto 1fr;align-items:center}.console-actions small{grid-column:2}.discovery-row{align-items:start;flex-direction:column}.filter-tabs{width:100%;overflow:auto;flex-wrap:nowrap;padding-bottom:3px}.filter-tab{white-space:nowrap}.tools-section{padding-top:58px}.tools-grid{grid-template-columns:1fr}.how-section{padding:70px 0 78px}.how-grid{grid-template-columns:1fr}.how-card h3{margin-top:24px}.footer-top{align-items:start;flex-direction:column}}
+
+/* ---------------------------------------------------------------
+   Mobile navigation fix (phone responsiveness pass)
+   style.css hides *any* <nav> below 700px with no way to reopen it,
+   which wipes the header menu (and, on some pages, the logo and the
+   footer links too, since they also sit inside a <nav>). The rules
+   below take over with higher specificity so nothing just vanishes:
+   the header nav becomes a real toggle menu, and the footer nav is
+   always kept visible and wrapped nicely.
+   --------------------------------------------------------------- */
+.site-header>div{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.site-header .logo,.site-header .brand{display:inline-flex;align-items:center;gap:10px;color:var(--ink,#111);text-decoration:none;font-size:20px;font-weight:850;letter-spacing:-.8px}
+.nav-toggle{display:none;align-items:center;justify-content:center;width:38px;height:38px;flex:0 0 auto;border:1px solid rgba(16,42,46,.16);border-radius:10px;background:#fff;color:var(--ink,#111);font-size:17px;line-height:1;cursor:pointer}
+footer nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+@media(max-width:700px){
+  .nav-toggle{display:inline-flex}
+  .site-header nav{position:absolute;left:0;right:0;top:100%;display:none;flex-direction:column;align-items:stretch;gap:2px;margin:0;padding:10px;background:#fff;border-bottom:1px solid rgba(16,42,46,.12);box-shadow:0 16px 32px rgba(16,42,46,.14);z-index:999}
+  .site-header nav.is-open{display:flex}
+  .site-header nav a{padding:12px 14px;border-radius:10px}
+}
