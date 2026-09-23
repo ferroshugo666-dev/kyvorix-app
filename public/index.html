@@ -4,833 +4,220 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kyvorix — Powerful PDF & File Tools. Private by Design.</title>
-
-<meta name="description" content="Powerful PDF, image and document tools that run directly in your browser. Fast, private and simple. Kyvorix Pro is just $4.99 per month.">
+<title>Kyvorix — Simple PDF, Image & File Tools</title>
+<meta name="description" content="Simple browser-based tools for PDFs, images and files. Compress, resize, convert and edit files directly in your browser.">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#07090d">
-
+<meta name="theme-color" content="#f7f6f1">
 <link rel="canonical" href="https://kyvorixapp.com/">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kyvorix — PDF & File Tools">
-<meta property="og:description" content="Professional document tools that run directly in your browser.">
+<meta property="og:title" content="Kyvorix — Simple PDF, Image & File Tools">
+<meta property="og:description" content="Easy-to-understand browser tools for PDFs, images and files.">
 <meta property="og:url" content="https://kyvorixapp.com/">
 <meta property="og:site_name" content="Kyvorix">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="kyvorix-enhancements.css">
 <link rel="stylesheet" href="kyvorix-pro.css">
 
 <style>
-/* =========================================================
-   KYVORIX GLOBAL HOMEPAGE
-   ========================================================= */
-
-:root {
-    --kx-bg: #07090d;
-    --kx-panel: #0d1118;
-    --kx-panel-2: #111722;
-    --kx-border: rgba(255,255,255,.09);
-    --kx-text: #f7f8fa;
-    --kx-muted: #9ca6b5;
-    --kx-accent: #7c5cff;
-    --kx-accent-2: #5b8cff;
-}
-
-body {
-    background: var(--kx-bg);
-    color: var(--kx-text);
-}
-
-.kx-page {
-    min-height: 100vh;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 50% -10%, rgba(124,92,255,.18), transparent 38%),
-        var(--kx-bg);
-}
-
-.kx-container {
-    width: min(1180px, calc(100% - 40px));
-    margin: 0 auto;
-}
-
-.kx-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,.07);
-    background: rgba(7,9,13,.78);
-    backdrop-filter: blur(20px);
-}
-
-.kx-nav {
-    min-height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.kx-brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #fff;
-    text-decoration: none;
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 700;
-    letter-spacing: -.04em;
-    font-size: 21px;
-}
-
-.kx-brand-mark {
-    width: 32px;
-    height: 32px;
-    display: grid;
-    place-items: center;
-    border-radius: 10px;
-    background: linear-gradient(135deg, var(--kx-accent), var(--kx-accent-2));
-    box-shadow: 0 8px 30px rgba(124,92,255,.3);
-    font-size: 14px;
-}
-
-.kx-nav-links {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-.kx-nav-links a {
-    color: #aeb6c4;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.kx-nav-links a:hover {
-    color: #fff;
-}
-
-.kx-nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.kx-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 42px;
-    padding: 0 17px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
-    transition: transform .18s ease, background .18s ease;
-}
-
-.kx-button:hover {
-    transform: translateY(-1px);
-}
-
-.kx-button-ghost {
-    color: #dce1e9;
-    border: 1px solid var(--kx-border);
-    background: rgba(255,255,255,.03);
-}
-
-.kx-button-primary {
-    color: #fff;
-    background: linear-gradient(135deg, var(--kx-accent), var(--kx-accent-2));
-    box-shadow: 0 12px 35px rgba(92,91,255,.25);
-}
-
-.kx-hero {
-    padding: 90px 0 65px;
-    text-align: center;
-}
-
-.kx-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 7px 12px;
-    border: 1px solid rgba(124,92,255,.25);
-    border-radius: 999px;
-    background: rgba(124,92,255,.08);
-    color: #bdb4ff;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-}
-
-.kx-eyebrow-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #8dffbf;
-    box-shadow: 0 0 12px #8dffbf;
-}
-
-.kx-hero h1 {
-    max-width: 900px;
-    margin: 25px auto 20px;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: clamp(44px, 7vw, 78px);
-    line-height: .98;
-    letter-spacing: -.065em;
-}
-
-.kx-gradient-text {
-    background: linear-gradient(100deg, #fff 20%, #b9aaff 60%, #7ca9ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.kx-hero-lead {
-    max-width: 670px;
-    margin: 0 auto;
-    color: var(--kx-muted);
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.kx-hero-actions {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-}
-
-.kx-hero-actions .kx-button {
-    min-height: 50px;
-    padding: 0 23px;
-}
-
-.kx-trust {
-    margin-top: 25px;
-    color: #727d8d;
-    font-size: 13px;
-}
-
-.kx-search-wrap {
-    max-width: 720px;
-    margin: 48px auto 0;
-    position: relative;
-}
-
-.kx-search {
-    width: 100%;
-    min-height: 62px;
-    padding: 0 58px 0 22px;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 16px;
-    outline: 0;
-    background: rgba(255,255,255,.045);
-    color: #fff;
-    font-size: 16px;
-    box-shadow: 0 25px 80px rgba(0,0,0,.25);
-}
-
-.kx-search::placeholder {
-    color: #697384;
-}
-
-.kx-search:focus {
-    border-color: rgba(124,92,255,.65);
-    box-shadow: 0 0 0 4px rgba(124,92,255,.1);
-}
-
-.kx-search-icon {
-    position: absolute;
-    right: 21px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #727d8d;
-    font-size: 20px;
-}
-
-.kx-section {
-    padding: 55px 0;
-}
-
-.kx-section-heading {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 24px;
-}
-
-.kx-section-heading h2 {
-    margin: 0;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 30px;
-    letter-spacing: -.04em;
-}
-
-.kx-section-heading p {
-    margin: 5px 0 0;
-    color: var(--kx-muted);
-}
-
-.kx-tools-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0,1fr));
-    gap: 12px;
-}
-
-.kx-tool {
-    min-height: 150px;
-    padding: 20px;
-    border: 1px solid var(--kx-border);
-    border-radius: 18px;
-    background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
-    color: #fff;
-    text-decoration: none;
-    transition: transform .2s ease, border-color .2s ease, background .2s ease;
-}
-
-.kx-tool:hover {
-    transform: translateY(-3px);
-    border-color: rgba(124,92,255,.4);
-    background: rgba(124,92,255,.08);
-}
-
-.kx-tool-icon {
-    width: 40px;
-    height: 40px;
-    display: grid;
-    place-items: center;
-    margin-bottom: 24px;
-    border-radius: 11px;
-    background: rgba(124,92,255,.13);
-    color: #b8acff;
-    font-weight: 800;
-    font-size: 13px;
-}
-
-.kx-tool strong {
-    display: block;
-    font-size: 15px;
-    margin-bottom: 5px;
-}
-
-.kx-tool span {
-    color: #7e8999;
-    font-size: 13px;
-}
-
-.kx-category-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0,1fr));
-    gap: 15px;
-}
-
-.kx-category {
-    padding: 25px;
-    border: 1px solid var(--kx-border);
-    border-radius: 20px;
-    background: var(--kx-panel);
-}
-
-.kx-category h3 {
-    margin: 0 0 8px;
-    font-size: 17px;
-}
-
-.kx-category p {
-    margin: 0 0 18px;
-    color: var(--kx-muted);
-    font-size: 14px;
-}
-
-.kx-category a {
-    color: #b7aaff;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.kx-pro {
-    margin: 55px 0;
-    padding: 42px;
-    border: 1px solid rgba(124,92,255,.25);
-    border-radius: 26px;
-    background:
-        radial-gradient(circle at 85% 20%, rgba(91,140,255,.16), transparent 35%),
-        radial-gradient(circle at 10% 80%, rgba(124,92,255,.12), transparent 35%),
-        var(--kx-panel);
-}
-
-.kx-pro-grid {
-    display: grid;
-    grid-template-columns: 1.4fr .6fr;
-    align-items: center;
-    gap: 40px;
-}
-
-.kx-pro h2 {
-    margin: 0 0 12px;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 36px;
-    letter-spacing: -.05em;
-}
-
-.kx-pro p {
-    color: var(--kx-muted);
-    max-width: 620px;
-}
-
-.kx-pro-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0,1fr));
-    gap: 10px;
-    margin-top: 24px;
-}
-
-.kx-pro-list span {
-    color: #cbd2dc;
-    font-size: 13px;
-}
-
-.kx-price {
-    padding: 25px;
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 18px;
-    background: rgba(255,255,255,.04);
-    text-align: center;
-}
-
-.kx-price small {
-    color: #8d98a8;
-}
-
-.kx-price strong {
-    display: block;
-    margin: 5px 0;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 44px;
-    letter-spacing: -.06em;
-}
-
-.kx-price span {
-    color: #8d98a8;
-    font-size: 13px;
-}
-
-.kx-privacy {
-    text-align: center;
-    padding: 75px 0;
-}
-
-.kx-privacy h2 {
-    margin: 0 0 12px;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 34px;
-    letter-spacing: -.04em;
-}
-
-.kx-privacy p {
-    max-width: 600px;
-    margin: auto;
-    color: var(--kx-muted);
-}
-
-.kx-footer {
-    padding: 30px 0;
-    border-top: 1px solid var(--kx-border);
-    color: #697384;
-    font-size: 13px;
-}
-
-.kx-footer-inner {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.kx-footer a {
-    color: #8c96a6;
-    text-decoration: none;
-}
-
-.kx-mobile-menu {
-    display: none;
-}
-
-@media (max-width: 900px) {
-    .kx-tools-grid {
-        grid-template-columns: repeat(2, minmax(0,1fr));
-    }
-
-    .kx-category-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .kx-pro-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 700px) {
-    .kx-nav-links,
-    .kx-nav-actions .kx-button-ghost {
-        display: none;
-    }
-
-    .kx-mobile-menu {
-        display: inline-flex;
-    }
-
-    .kx-hero {
-        padding-top: 65px;
-    }
-
-    .kx-tools-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .kx-pro {
-        padding: 27px;
-    }
-
-    .kx-pro-list {
-        grid-template-columns: 1fr;
-    }
-
-    .kx-footer-inner {
-        flex-direction: column;
-    }
-}
+/* Accessible homepage redesign. Tool functionality is unchanged. */
+.kx-home{--kx-bg:#f7f6f1;--kx-surface:#fff;--kx-ink:#102a2e;--kx-soft:#315358;--kx-muted:#647577;--kx-line:rgba(16,42,46,.14);--kx-accent:#e86d52;--kx-mint:#d9eee5;min-height:100vh;background:var(--kx-bg);color:var(--kx-ink)}
+.kx-home *{box-sizing:border-box}
+.kx-container{width:min(1180px,calc(100% - 32px));margin:auto}
+.kx-header{position:sticky;top:0;z-index:1000;background:rgba(247,246,241,.94);border-bottom:1px solid var(--kx-line);backdrop-filter:blur(16px)}
+.kx-nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.kx-brand{display:inline-flex;align-items:center;gap:10px;color:var(--kx-ink);text-decoration:none;font:700 21px "Space Grotesk",sans-serif}
+.kx-brand-mark{width:32px;height:32px;display:grid;place-items:center;border-radius:9px;background:var(--kx-ink);color:#fff}
+.kx-nav-links{display:flex;gap:4px}
+.kx-nav-links a{padding:9px 12px;border-radius:9px;color:var(--kx-soft);font-size:14px;font-weight:700;text-decoration:none}
+.kx-nav-links a:hover{background:rgba(16,42,46,.07);color:var(--kx-ink)}
+.kx-nav-actions{display:flex;gap:9px}
+.kx-button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:11px;text-decoration:none;font-size:14px;font-weight:700}
+.kx-button-primary{background:var(--kx-ink);color:#fff;box-shadow:0 8px 20px rgba(16,42,46,.14)}
+.kx-button-primary:hover{background:#173b40}
+.kx-button-ghost{border:1px solid var(--kx-line);background:#fff;color:var(--kx-ink)}
+.kx-button-ghost:hover{border-color:var(--kx-ink)}
+.kx-hero{padding:78px 0 60px}
+.kx-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.75fr);gap:70px;align-items:center}
+.kx-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid var(--kx-line);border-radius:999px;background:#fff;color:var(--kx-soft);font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.kx-eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#4aa477}
+.kx-hero h1{margin:22px 0 18px;max-width:760px;font:700 clamp(46px,6.4vw,78px)/.98 "Space Grotesk",sans-serif;letter-spacing:-.055em}
+.kx-hero h1 em{color:var(--kx-accent);font-style:normal}
+.kx-hero-lead{max-width:650px;margin:0;color:var(--kx-soft);font-size:18px;line-height:1.65}
+.kx-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.kx-trust{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px;color:var(--kx-muted);font-size:12px;font-weight:600}
+.kx-trust span{display:inline-flex;align-items:center;gap:6px}.kx-trust span::before{content:"✓";display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--kx-mint);color:var(--kx-ink);font-weight:800}
+.kx-search-wrap{position:relative;max-width:680px;margin:30px 0 0}
+.kx-search{width:100%;min-height:58px;padding:0 18px 0 48px;border:1px solid var(--kx-line);border-radius:14px;background:#fff;color:var(--kx-ink);font-size:15px;outline:0;box-shadow:0 10px 25px rgba(16,42,46,.05)}
+.kx-search:focus{border-color:var(--kx-accent);box-shadow:0 0 0 4px rgba(232,109,82,.12)}
+.kx-search-icon{position:absolute;left:18px;top:17px;color:var(--kx-accent);font-size:22px}
+.kx-console{padding:22px;border:1px solid var(--kx-line);border-radius:22px;background:rgba(255,255,255,.82);box-shadow:0 24px 60px rgba(16,42,46,.1);transform:rotate(1deg)}
+.kx-console-head{display:flex;justify-content:space-between;color:var(--kx-muted);font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.kx-console-title{margin:28px 0 16px}.kx-console-title small{display:block;color:var(--kx-accent);font-weight:800;letter-spacing:.1em}.kx-console-title strong{display:block;margin-top:5px;font:700 24px "Space Grotesk",sans-serif}
+.kx-console-file{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--kx-line);border-radius:13px;background:#fff}
+.kx-file-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:10px;background:var(--kx-ink);color:#fff;font-size:11px;font-weight:800}
+.kx-console-file div:nth-child(2){flex:1}.kx-console-file strong{display:block;font-size:13px}.kx-console-file span{color:var(--kx-muted);font-size:11px}
+.kx-console-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.kx-console-tools a{padding:12px 9px;border:1px solid var(--kx-line);border-radius:11px;background:var(--kx-mint);color:var(--kx-ink);text-decoration:none}.kx-console-tools a:hover{background:#cce6da}
+.kx-console-tools strong{display:block;font-size:12px}.kx-console-tools span{display:block;margin-top:3px;color:var(--kx-soft);font-size:10px}
+.kx-section{padding:62px 0}.kx-section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}.kx-section-head h2{margin:0;font:700 32px "Space Grotesk",sans-serif;letter-spacing:-.04em}.kx-section-head p{margin:5px 0 0;color:var(--kx-soft)}
+.kx-tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.kx-tool{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:15px;min-height:138px;padding:20px;border:1px solid var(--kx-line);border-radius:17px;background:rgba(255,255,255,.72);color:var(--kx-ink);text-decoration:none;transition:.18s ease}
+.kx-tool:hover{transform:translateY(-3px);border-color:rgba(232,109,82,.5);box-shadow:0 14px 30px rgba(16,42,46,.08)}
+.kx-tool-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:14px;background:var(--kx-ink);color:#fff;font-size:12px;font-weight:800}
+.kx-tool strong{display:block;font:700 16px "Space Grotesk",sans-serif}.kx-tool span{display:block;margin-top:5px;color:var(--kx-soft);font-size:13px;line-height:1.45}.kx-tool-action{color:var(--kx-accent);font-size:13px;font-weight:800;white-space:nowrap}
+.kx-categories{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.kx-category{padding:22px;border:1px solid var(--kx-line);border-radius:17px;background:#fff}.kx-category h3{margin:0 0 7px;font:700 18px "Space Grotesk",sans-serif}.kx-category p{margin:0 0 14px;color:var(--kx-soft);font-size:13px}.kx-category a{color:var(--kx-accent);font-size:13px;font-weight:800;text-decoration:none}
+.kx-how{padding:70px 0;background:var(--kx-ink);color:#fff}.kx-how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.kx-how-card{padding:23px;border:1px solid rgba(255,255,255,.14);border-radius:16px;background:rgba(255,255,255,.06)}.kx-how-card b{color:#f0c76d;font-size:12px}.kx-how-card h3{margin:30px 0 7px;font:700 20px "Space Grotesk",sans-serif}.kx-how-card p{margin:0;color:#b7cbca;font-size:14px;line-height:1.6}
+.kx-privacy{padding:65px 0}.kx-privacy-card{display:flex;gap:18px;align-items:center;padding:28px;border-radius:20px;background:var(--kx-mint)}.kx-privacy-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:13px;background:var(--kx-ink);color:#fff}.kx-privacy h2{margin:0 0 5px;font:700 20px "Space Grotesk",sans-serif}.kx-privacy p{margin:0;color:var(--kx-soft);font-size:14px}
+.kx-pro{padding:28px;border:1px solid rgba(232,109,82,.28);border-radius:22px;background:#fff}.kx-pro-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.kx-pro h2{margin:10px 0;font:700 32px "Space Grotesk",sans-serif}.kx-pro p{color:var(--kx-soft)}.kx-pro-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;color:var(--kx-soft);font-size:13px}.kx-price{text-align:center;padding:20px;border:1px solid var(--kx-line);border-radius:16px}.kx-price strong{display:block;font:700 40px "Space Grotesk",sans-serif}.kx-price small,.kx-price span{color:var(--kx-muted)}
+.kx-footer{padding:28px 0;border-top:1px solid var(--kx-line);color:var(--kx-muted);font-size:12px}.kx-footer-inner{display:flex;justify-content:space-between;gap:20px}.kx-footer a{color:var(--kx-soft);text-decoration:none}
+@media(max-width:900px){.kx-hero-grid{grid-template-columns:1fr;gap:38px}.kx-console{max-width:620px;transform:none}.kx-categories{grid-template-columns:1fr}.kx-pro-grid{grid-template-columns:1fr}.kx-how-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.kx-nav-links{display:none}.kx-nav-actions .kx-button-ghost{display:none}.kx-hero{padding-top:58px}.kx-hero h1{font-size:clamp(43px,13vw,64px)}.kx-hero-actions,.kx-hero-actions a{width:100%}.kx-tools-grid{grid-template-columns:1fr}.kx-tool{grid-template-columns:auto 1fr}.kx-tool-action{display:none}.kx-console-tools{grid-template-columns:1fr}.kx-pro-list{grid-template-columns:1fr}.kx-footer-inner{flex-direction:column}.kx-privacy-card{align-items:flex-start}}
 </style>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6997398456614782" crossorigin="anonymous"></script>
 </head>
-
 <body>
-
-<div class="kx-page">
+<div class="kx-home">
 
 <header class="kx-header">
-    <div class="kx-container kx-nav">
-
-        <a class="kx-brand" href="/">
-            <span class="kx-brand-mark">K</span>
-            KYVORIX
-        </a>
-
-        <nav class="kx-nav-links" aria-label="Main navigation">
-            <a href="#tools">Tools</a>
-            <a href="#categories">Categories</a>
-            <a href="#pro">Pro</a>
-            <a href="#privacy">Privacy</a>
-        </nav>
-
-        <div class="kx-nav-actions">
-            <a class="kx-button kx-button-ghost" href="#tools">Explore tools</a>
-            <a class="kx-button kx-button-primary" href="#pro">Get Pro — $4.99/month</a>
-        </div>
-
+  <div class="kx-container kx-nav">
+    <a class="kx-brand" href="/"><span class="kx-brand-mark">K</span>KYVORIX</a>
+    <nav class="kx-nav-links" aria-label="Main navigation">
+      <a href="#tools">Tools</a><a href="#categories">Categories</a><a href="#how">How it works</a><a href="#privacy">Privacy</a>
+    </nav>
+    <div class="kx-nav-actions">
+      <a class="kx-button kx-button-ghost" href="#tools">View tools</a>
+      <a class="kx-button kx-button-primary" href="#pro">Kyvorix Pro</a>
     </div>
+  </div>
 </header>
 
 <main>
-
 <section class="kx-hero">
-    <div class="kx-container">
-
-        <div class="kx-eyebrow">
-            <span class="kx-eyebrow-dot"></span>
-            100% browser-based
-        </div>
-
-        <h1>
-            Powerful tools for your
-            <span class="kx-gradient-text">PDFs, images & files.</span>
-        </h1>
-
-        <p class="kx-hero-lead">
-            Convert, compress, edit and optimize your files without sending them
-            to a server. Fast tools. Simple workflow. Privacy by design.
-        </p>
-
-        <div class="kx-hero-actions">
-            <a class="kx-button kx-button-primary" href="#tools">Explore all tools →</a>
-            <a class="kx-button kx-button-ghost" href="#pro">Kyvorix Pro — $4.99/month</a>
-        </div>
-
-        <div class="kx-trust">
-            No account required · Files stay on your device · Free to start
-        </div>
-
-        <div class="kx-search-wrap">
-            <label class="sr-only" for="kxToolSearch">Search tools</label>
-            <input
-                id="kxToolSearch"
-                class="kx-search"
-                type="search"
-                placeholder="Search for a tool — compress PDF, JPG to WebP, OCR..."
-                autocomplete="off"
-            >
-            <span class="kx-search-icon">⌕</span>
-        </div>
-
+  <div class="kx-container kx-hero-grid">
+    <div>
+      <div class="kx-eyebrow"><span class="kx-eyebrow-dot"></span>Simple file tools</div>
+      <h1>Do more with your <em>files.</em></h1>
+      <p class="kx-hero-lead">Compress, resize, convert and edit your PDFs and images without guessing what each button does. Every tool tells you exactly what it is for.</p>
+      <div class="kx-hero-actions">
+        <a class="kx-button kx-button-primary" href="#tools">See all tools</a>
+        <a class="kx-button kx-button-ghost" href="#how">How does it work?</a>
+      </div>
+      <div class="kx-trust"><span>No account required</span><span>Browser-based</span><span>Simple instructions</span></div>
+      <div class="kx-search-wrap">
+        <label class="sr-only" for="kxToolSearch">Search tools</label>
+        <span class="kx-search-icon" aria-hidden="true">⌕</span>
+        <input id="kxToolSearch" class="kx-search" type="search" placeholder="What do you want to do? e.g. make an image smaller" autocomplete="off">
+      </div>
     </div>
-</section>
 
+    <aside class="kx-console" aria-label="Example of the Kyvorix workflow">
+      <div class="kx-console-head"><span>Example</span><span>3 simple steps</span></div>
+      <div class="kx-console-title"><small>IMAGE RESIZER</small><strong>Make a picture smaller</strong></div>
+      <div class="kx-console-file"><span class="kx-file-icon">JPG</span><div><strong>holiday-photo.jpg</strong><span>Original: 4000 × 3000 px</span></div></div>
+      <div class="kx-console-tools">
+        <a href="tools/image-resizer.html"><strong>1. Choose image</strong><span>Select a file</span></a>
+        <a href="tools/image-resizer.html"><strong>2. Set size</strong><span>Choose dimensions</span></a>
+        <a href="tools/image-resizer.html"><strong>3. Download</strong><span>Save the result</span></a>
+      </div>
+    </aside>
+  </div>
+</section>
 
 <section id="tools" class="kx-section">
-    <div class="kx-container">
-
-        <div class="kx-section-heading">
-            <div>
-                <h2>Popular tools</h2>
-                <p>Everything you need for everyday file work.</p>
-            </div>
-        </div>
-
-        <div id="kxToolsGrid" class="kx-tools-grid">
-
-            <a class="kx-tool" href="tools/image-compressor.html" data-search="compress image jpg png webp">
-                <div class="kx-tool-icon">IMG</div>
-                <strong>Image Compressor</strong>
-                <span>Reduce image size while keeping quality.</span>
-            </a>
-
-            <a class="kx-tool" href="tools/image-resizer.html" data-search="resize image dimensions">
-                <div class="kx-tool-icon">↔</div>
-                <strong>Image Resizer</strong>
-                <span>Resize images to exact dimensions.</span>
-            </a>
-
-            <a class="kx-tool" href="tools/image-cropper.html" data-search="crop image photo">
-                <div class="kx-tool-icon">✂</div>
-                <strong>Image Cropper</strong>
-                <span>Crop photos quickly in your browser.</span>
-            </a>
-
-            <a class="kx-tool" href="tools/image-to-pdf.html" data-search="image jpg png webp pdf">
-                <div class="kx-tool-icon">PDF</div>
-                <strong>Image to PDF</strong>
-                <span>Turn images into PDF documents.</span>
-            </a>
-
-            <a class="kx-tool" href="tools/pdf-to-jpg.html" data-search="pdf jpg image convert">
-                <div class="kx-tool-icon">PDF</div>
-                <strong>PDF to JPG</strong>
-                <span>Convert PDF pages into images.</span>
-            </a>
-
-            <a class="kx-tool" href="tools/jpg-to-webp.html" data-search="jpg webp convert">
-                <div class="kx-tool-icon">WEB</div>
-                <strong>JPG to WebP</strong>
-                <span>Convert images to modern WebP.</span>
-            </a>
-
-            <a class="kx-tool" href="tools/heic-to-jpg.html" data-search="heic iphone jpg convert">
-                <div class="kx-tool-icon">HEIC</div>
-                <strong>HEIC to JPG</strong>
-                <span>Convert iPhone HEIC photos locally.</span>
-            </a>
-
-            <a class="kx-tool" href="tools/batch-image-converter.html" data-search="batch image converter multiple">
-                <div class="kx-tool-icon">BATCH</div>
-                <strong>Batch Converter</strong>
-                <span>Convert multiple images at once.</span>
-            </a>
-
-        </div>
-
+  <div class="kx-container">
+    <div class="kx-section-head"><div><h2>What do you want to do?</h2><p>Choose the task, not just an icon.</p></div></div>
+    <div id="kxToolsGrid" class="kx-tools-grid">
+      <a class="kx-tool" href="tools/image-compressor.html" data-search="compress image make image smaller jpg png webp"><span class="kx-tool-icon">IMG</span><span><strong>Make an image smaller</strong><span>Compress JPG, PNG or WebP files.</span></span><span class="kx-tool-action">Open →</span></a>
+      <a class="kx-tool" href="tools/image-resizer.html" data-search="resize image change dimensions size"><span class="kx-tool-icon">↔</span><span><strong>Change image size</strong><span>Set the width and height in pixels.</span></span><span class="kx-tool-action">Open →</span></a>
+      <a class="kx-tool" href="tools/image-cropper.html" data-search="crop image cut photo"><span class="kx-tool-icon">✂</span><span><strong>Cut part of an image</strong><span>Crop a photo to keep only the area you need.</span></span><span class="kx-tool-action">Open →</span></a>
+      <a class="kx-tool" href="tools/image-to-pdf.html" data-search="image to pdf jpg png convert document"><span class="kx-tool-icon">PDF</span><span><strong>Turn images into a PDF</strong><span>Combine image files into a PDF document.</span></span><span class="kx-tool-action">Open →</span></a>
+      <a class="kx-tool" href="tools/pdf-to-jpg.html" data-search="pdf to jpg convert pages image"><span class="kx-tool-icon">PDF</span><span><strong>Turn a PDF into images</strong><span>Convert PDF pages into JPG images.</span></span><span class="kx-tool-action">Open →</span></a>
+      <a class="kx-tool" href="tools/jpg-to-webp.html" data-search="jpg to webp convert"><span class="kx-tool-icon">WEBP</span><span><strong>Convert JPG to WebP</strong><span>Change JPG images to the WebP format.</span></span><span class="kx-tool-action">Open →</span></a>
+      <a class="kx-tool" href="tools/heic-to-jpg.html" data-search="heic iphone jpg convert photo"><span class="kx-tool-icon">HEIC</span><span><strong>Convert HEIC to JPG</strong><span>Convert iPhone HEIC photos to JPG.</span></span><span class="kx-tool-action">Open →</span></a>
+      <a class="kx-tool" href="tools/batch-image-converter.html" data-search="batch convert multiple images"><span class="kx-tool-icon">BATCH</span><span><strong>Convert several images</strong><span>Process multiple images in one go.</span></span><span class="kx-tool-action">Open →</span></a>
     </div>
+    <div id="kxNoResults" class="tool-no-results" hidden><strong>No matching tool</strong><p>Try words such as “compress”, “resize”, “PDF” or “convert”.</p><button type="button" class="secondary-button" id="kxClearSearch">Clear search</button></div>
+  </div>
 </section>
-
 
 <section id="categories" class="kx-section">
-    <div class="kx-container">
-
-        <div class="kx-section-heading">
-            <div>
-                <h2>One workspace. Every file.</h2>
-                <p>The Kyvorix suite is growing into a complete document toolkit.</p>
-            </div>
-        </div>
-
-        <div class="kx-category-grid">
-
-            <article class="kx-category">
-                <h3>PDF</h3>
-                <p>Merge, split, compress, convert, edit and organize PDF files.</p>
-                <a href="#tools">Explore PDF tools →</a>
-            </article>
-
-            <article class="kx-category">
-                <h3>Images</h3>
-                <p>Convert, compress, resize, crop and optimize your images.</p>
-                <a href="#tools">Explore image tools →</a>
-            </article>
-
-            <article class="kx-category">
-                <h3>Documents</h3>
-                <p>Work with documents and extract useful information locally.</p>
-                <a href="#tools">Explore document tools →</a>
-            </article>
-
-            <article class="kx-category">
-                <h3>OCR</h3>
-                <p>Extract text from supported documents and images directly in your browser.</p>
-                <a href="#tools">Explore OCR →</a>
-            </article>
-
-            <article class="kx-category">
-                <h3>Security</h3>
-                <p>Protect, unlock and manage sensitive document workflows.</p>
-                <a href="#tools">Explore security →</a>
-            </article>
-
-            <article class="kx-category">
-                <h3>AI tools</h3>
-                <p>Summarize, extract and work with document content locally where supported.</p>
-                <a href="#tools">Explore AI tools →</a>
-            </article>
-
-        </div>
-
+  <div class="kx-container">
+    <div class="kx-section-head"><div><h2>Tools by type</h2><p>Start with the kind of file you have.</p></div></div>
+    <div class="kx-categories">
+      <article class="kx-category"><h3>Images</h3><p>Resize, compress, crop and convert photos and graphics.</p><a href="#tools">See image tools →</a></article>
+      <article class="kx-category"><h3>PDFs</h3><p>Convert and work with PDF documents and their pages.</p><a href="#tools">See PDF tools →</a></article>
+      <article class="kx-category"><h3>Documents</h3><p>Work with document files and extract useful information.</p><a href="#tools">See document tools →</a></article>
     </div>
+  </div>
 </section>
 
+<section id="how" class="kx-how">
+  <div class="kx-container">
+    <div class="kx-section-head"><div><h2 style="color:#fff">How Kyvorix works</h2><p style="color:#b7cbca">No technical knowledge needed.</p></div></div>
+    <div class="kx-how-grid">
+      <article class="kx-how-card"><b>01</b><h3>Choose what you need</h3><p>Use the plain-language description to find the task you want to complete.</p></article>
+      <article class="kx-how-card"><b>02</b><h3>Follow the instructions</h3><p>The tool explains what to select, what to change and what each option means.</p></article>
+      <article class="kx-how-card"><b>03</b><h3>Download your result</h3><p>Preview the result when available, then save the finished file to your device.</p></article>
+    </div>
+  </div>
+</section>
 
 <section id="pro" class="kx-section">
-    <div class="kx-container">
-
-        <div class="kx-pro">
-
-            <div class="kx-pro-grid">
-
-                <div>
-                    <div class="kx-eyebrow">KYVORIX PRO</div>
-
-                    <h2>Everything you need.<br>One simple price.</h2>
-
-                    <p>
-                        Unlock the complete Kyvorix toolkit for just
-                        <strong>$4.99 per month</strong>.
-                        No complicated plans. No expensive monthly subscription.
-                    </p>
-
-                    <div class="kx-pro-list">
-                        <span>✓ All available tools</span>
-                        <span>✓ Batch processing</span>
-                        <span>✓ Advanced PDF tools</span>
-                        <span>✓ OCR tools</span>
-                        <span>✓ AI features where supported</span>
-                        <span>✓ Larger usage limits</span>
-                        <span>✓ No advertising</span>
-                        <span>✓ Privacy-first processing</span>
-                    </div>
-                </div>
-
-                <div class="kx-price">
-                    <small>Kyvorix Pro</small>
-                    <strong>$4.99</strong>
-                    <span>per month</span>
-                    <small style="display:block;margin-top:8px;opacity:.7;">or $39.99 per year</small>
-                    <br>
-                    <a class="kx-button kx-button-primary" href="#pro">
-                        Get Pro
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
+  <div class="kx-container">
+    <div class="kx-pro">
+      <div class="kx-pro-grid">
+        <div><div class="kx-eyebrow">KYVORIX PRO</div><h2>More tools. Fewer limits.</h2><p>Unlock the available Pro features with one straightforward subscription.</p><div class="kx-pro-list"><span>✓ More usage</span><span>✓ Batch processing</span><span>✓ Advanced tools</span><span>✓ No advertising</span></div></div>
+        <div class="kx-price"><small>Kyvorix Pro</small><strong>$4.99</strong><span>per month</span><br><br><a class="kx-button kx-button-primary" href="#pro">Get Pro</a></div>
+      </div>
     </div>
+  </div>
 </section>
-
 
 <section id="privacy" class="kx-privacy">
-    <div class="kx-container">
-
-        <div class="kx-eyebrow">PRIVACY FIRST</div>
-
-        <h2>Your files stay with you.</h2>
-
-        <p>
-            Kyvorix is designed around browser-based processing.
-            Whenever a tool supports local processing, your files can be
-            processed directly on your device instead of being uploaded
-            to a Kyvorix server.
-        </p>
-
-    </div>
+  <div class="kx-container">
+    <div class="kx-privacy-card"><div class="kx-privacy-icon" aria-hidden="true">✓</div><div><h2>Privacy is explained clearly</h2><p>When a tool supports local processing, your file is processed directly in your browser instead of being uploaded to a Kyvorix server.</p></div></div>
+  </div>
 </section>
-
 </main>
 
-
 <footer class="kx-footer">
-    <div class="kx-container kx-footer-inner">
-        <span>© 2026 Kyvorix. Built for the web.</span>
-
-        <div>
-            <a href="privacy-policy.html">Privacy</a>
-            &nbsp;·&nbsp;
-            <a href="terms.html">Terms</a>
-            &nbsp;·&nbsp;
-            <a href="contact.html">Contact</a>
-        </div>
-    </div>
+  <div class="kx-container kx-footer-inner"><span>© 2026 Kyvorix. Built for the web.</span><div><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></div></div>
 </footer>
-
 </div>
 
-
 <script>
-(function () {
-    const input = document.getElementById("kxToolSearch");
-    const tools = Array.from(document.querySelectorAll(".kx-tool"));
-
-    if (!input) return;
-
-    input.addEventListener("input", function () {
-        const query = this.value.trim().toLowerCase();
-
-        tools.forEach(function (tool) {
-            const haystack = (
-                tool.textContent + " " +
-                (tool.dataset.search || "")
-            ).toLowerCase();
-
-            tool.hidden = query && !haystack.includes(query);
-        });
+(function(){
+  const input=document.getElementById("kxToolSearch");
+  const tools=[...document.querySelectorAll(".kx-tool")];
+  const empty=document.getElementById("kxNoResults");
+  const clear=document.getElementById("kxClearSearch");
+  if(!input)return;
+  function filter(){
+    const q=input.value.trim().toLowerCase();
+    let visible=0;
+    tools.forEach(tool=>{
+      const hay=(tool.textContent+" "+(tool.dataset.search||"")).toLowerCase();
+      const show=!q||hay.includes(q);
+      tool.hidden=!show;
+      if(show)visible++;
     });
-
-    document.addEventListener("keydown", function (event) {
-        if (
-            event.key === "/" &&
-            document.activeElement &&
-            !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)
-        ) {
-            event.preventDefault();
-            input.focus();
-        }
-    });
+    empty.hidden=visible!==0;
+  }
+  input.addEventListener("input",filter);
+  clear?.addEventListener("click",()=>{input.value="";filter();input.focus()});
+  document.addEventListener("keydown",e=>{
+    if(e.key==="/" && !["INPUT","TEXTAREA"].includes(document.activeElement?.tagName)){e.preventDefault();input.focus()}
+  });
 })();
 </script>
-
+<script src="consent.js" defer></script>
 </body>
 </html>
-
-
