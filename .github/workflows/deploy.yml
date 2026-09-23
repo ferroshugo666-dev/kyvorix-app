@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - 'redesign/**'
   workflow_dispatch:
 
 jobs:
@@ -57,4 +58,4 @@ jobs:
         run: |
           npx wrangler@4 pages deploy dist \
             --project-name=kyvorix-tools \
-            --branch=main
+            --branch=${GITHUB_REF_NAME}
