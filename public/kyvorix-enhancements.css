@@ -51,3 +51,202 @@ nav a{color:var(--ink-soft)}nav a:hover{background:rgba(16,42,46,.07);color:var(
 .about-section{background:#f0eee7;border-color:rgba(16,42,46,.12)}footer{background:var(--paper);border-color:rgba(16,42,46,.12)}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:45px}.hero-console{max-width:600px;transform:none}.hero-copy{max-width:700px}.how-heading{align-items:start;flex-direction:column;gap:18px}}
 @media(max-width:700px){.container{width:min(var(--container),calc(100% - 32px))}.site-header,.nav{height:68px}.site-header nav a:nth-child(2){display:none}.hero{padding:60px 0 68px}.hero h1{font-size:clamp(45px,14vw,68px);letter-spacing:-3px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions a{width:100%}.hero-actions .primary-button{margin-top:0}.trust-row{align-items:flex-start;flex-direction:column;gap:9px}.console-actions{grid-template-columns:1fr}.console-actions a{grid-template-columns:auto 1fr;align-items:center}.console-actions small{grid-column:2}.discovery-row{align-items:start;flex-direction:column}.filter-tabs{width:100%;overflow:auto;flex-wrap:nowrap;padding-bottom:3px}.filter-tab{white-space:nowrap}.tools-section{padding-top:58px}.tools-grid{grid-template-columns:1fr}.how-section{padding:70px 0 78px}.how-grid{grid-template-columns:1fr}.how-card h3{margin-top:24px}.footer-top{align-items:start;flex-direction:column}}
+
+
+/* ============================================================
+   KYVORIX INTUITIVE TOOL UI
+   Shared visual layer for every tool page.
+   Does not change tool functionality.
+   ============================================================ */
+:root{
+  --kx-bg:#f7f6f1;
+  --kx-surface:#ffffff;
+  --kx-ink:#102a2e;
+  --kx-soft:#315358;
+  --kx-muted:#647577;
+  --kx-line:rgba(16,42,46,.14);
+  --kx-accent:#e86d52;
+  --kx-mint:#d9eee5;
+}
+body{
+  background:var(--kx-bg)!important;
+  color:var(--kx-ink)!important;
+  font-family:"DM Sans",Arial,sans-serif!important;
+}
+.site-header{
+  background:rgba(247,246,241,.96)!important;
+  border-bottom:1px solid var(--kx-line)!important;
+}
+.site-header .container{
+  min-height:70px;
+}
+.site-header .brand,
+.site-header .logo{
+  color:var(--kx-ink)!important;
+  font-family:"Space Grotesk",sans-serif!important;
+  font-weight:700!important;
+}
+.site-header nav a{
+  color:var(--kx-soft)!important;
+  border-radius:9px;
+  padding:9px 12px;
+  font-weight:700;
+}
+.site-header nav a:hover{
+  background:rgba(16,42,46,.07);
+  color:var(--kx-ink)!important;
+}
+.tool-page{
+  background:var(--kx-bg)!important;
+  padding:58px 0 90px!important;
+}
+.tool-page-inner{
+  max-width:900px!important;
+}
+.tool-page h1{
+  color:var(--kx-ink)!important;
+  font-family:"Space Grotesk",sans-serif!important;
+  letter-spacing:-.045em!important;
+}
+.tool-lead{
+  color:var(--kx-soft)!important;
+  max-width:700px!important;
+}
+.tool-panel{
+  border:1px solid var(--kx-line)!important;
+  border-radius:20px!important;
+  background:var(--kx-surface)!important;
+  box-shadow:0 16px 40px rgba(16,42,46,.07)!important;
+}
+.upload-zone,
+.drop-zone{
+  border:2px dashed rgba(16,42,46,.2)!important;
+  border-radius:16px!important;
+  background:rgba(217,238,229,.3)!important;
+  color:var(--kx-ink)!important;
+  min-height:190px;
+  transition:.18s ease;
+}
+.upload-zone:hover,
+.drop-zone:hover,
+.drop-zone.dragover{
+  border-color:var(--kx-accent)!important;
+  background:rgba(240,199,109,.14)!important;
+  transform:translateY(-1px);
+}
+.upload-zone strong,
+.drop-zone strong{
+  color:var(--kx-ink)!important;
+  font-family:"Space Grotesk",sans-serif!important;
+  font-size:20px!important;
+}
+.upload-zone small,
+.upload-zone span,
+.drop-zone small,
+.drop-zone span{
+  color:var(--kx-soft)!important;
+}
+.upload-icon{
+  background:var(--kx-accent)!important;
+}
+.tool-actions .primary-button,
+.tool-actions .btn-primary,
+.btn.btn-primary{
+  background:var(--kx-ink)!important;
+  color:#fff!important;
+  border-color:var(--kx-ink)!important;
+  border-radius:11px!important;
+  font-weight:800!important;
+}
+.tool-actions .primary-button:hover,
+.tool-actions .btn-primary:hover,
+.btn.btn-primary:hover{
+  background:#173b40!important;
+}
+.tool-actions .secondary-button,
+.tool-actions .btn-secondary,
+.btn.btn-secondary{
+  background:#fff!important;
+  color:var(--kx-ink)!important;
+  border:1px solid var(--kx-line)!important;
+  border-radius:11px!important;
+  font-weight:800!important;
+}
+.tool-actions .secondary-button:hover,
+.tool-actions .btn-secondary:hover,
+.btn.btn-secondary:hover{
+  border-color:var(--kx-ink)!important;
+}
+.tool-explanation{
+  border-top:1px solid var(--kx-line)!important;
+}
+.tool-explanation h2,
+.content-section h2{
+  color:var(--kx-ink)!important;
+  font-family:"Space Grotesk",sans-serif!important;
+}
+.tool-explanation p,
+.content-section p{
+  color:var(--kx-soft)!important;
+  line-height:1.7;
+}
+.content-section{
+  background:var(--kx-bg)!important;
+}
+.feature-grid{
+  gap:13px!important;
+}
+.feature-grid article{
+  border:1px solid var(--kx-line)!important;
+  border-radius:16px!important;
+  background:#fff!important;
+}
+.faq details{
+  border:1px solid var(--kx-line)!important;
+  border-radius:13px!important;
+  background:#fff!important;
+  margin-bottom:9px;
+}
+.faq summary{
+  color:var(--kx-ink)!important;
+  font-weight:700!important;
+}
+.faq details p{
+  color:var(--kx-soft)!important;
+}
+.result-box,
+.kyv-status{
+  border-color:rgba(16,42,46,.12)!important;
+  background:var(--kx-mint)!important;
+  color:var(--kx-ink)!important;
+}
+.kyv-file-details{
+  color:var(--kx-muted)!important;
+}
+input,select,textarea{
+  border-color:var(--kx-line)!important;
+  border-radius:10px!important;
+}
+input:focus,select:focus,textarea:focus{
+  border-color:var(--kx-accent)!important;
+  box-shadow:0 0 0 4px rgba(232,109,82,.1)!important;
+  outline:none;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+  outline:3px solid rgba(232,109,82,.3)!important;
+  outline-offset:3px;
+}
+footer{
+  background:var(--kx-bg)!important;
+  border-top:1px solid var(--kx-line)!important;
+  color:var(--kx-muted)!important;
+}
+@media(max-width:700px){
+  .tool-page{padding:42px 0 70px!important}
+  .tool-panel{padding:16px!important}
+  .upload-zone,.drop-zone{min-height:170px}
+}
