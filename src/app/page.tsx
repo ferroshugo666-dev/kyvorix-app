@@ -1,69 +1,70 @@
-import Image from "next/image";
-
-export default function Home() {
+﻿export default function Home() {
+  const aiTools = [
+    { name: "Summarize PDF", desc: "Summary in seconds", tag: "NEW" },
+    { name: "Translate PDF", desc: "Keeps layout", tag: "AI" },
+    { name: "Chat with PDF", desc: "Ask anything", tag: "AI" },
+    { name: "PDF to Markdown", desc: "For LLMs & Notion", tag: "AI" },
+    { name: "OCR PDF", desc: "Scan to text", tag: "" },
+    { name: "Compare PDF", desc: "Find differences", tag: "" },
+  ]
+  const tools = [
+    { name: "Merge PDF", desc: "Combine PDFs" },
+    { name: "Split PDF", desc: "Separate pages" },
+    { name: "Remove pages", desc: "Delete pages" },
+    { name: "Extract pages", desc: "Get pages" },
+    { name: "Organize PDF", desc: "Reorder" },
+    { name: "Rotate PDF", desc: "Rotate pages" },
+    { name: "Compress PDF", desc: "Reduce size" },
+    { name: "Repair PDF", desc: "Fix PDF" },
+    { name: "Page numbers", desc: "Add numbers" },
+    { name: "Watermark", desc: "Add watermark" },
+    { name: "JPG to PDF", desc: "" },
+    { name: "Word to PDF", desc: "" },
+    { name: "PowerPoint to PDF", desc: "" },
+    { name: "Excel to PDF", desc: "" },
+    { name: "HTML to PDF", desc: "" },
+    { name: "PDF to JPG", desc: "" },
+    { name: "PDF to Word", desc: "" },
+    { name: "PDF to PowerPoint", desc: "" },
+    { name: "PDF to Excel", desc: "" },
+    { name: "PDF to PDF/A", desc: "" },
+    { name: "Protect PDF", desc: "" },
+    { name: "Unlock PDF", desc: "" },
+    { name: "Sign PDF", desc: "" },
+    { name: "Redact PDF", desc: "Hide info" },
+    { name: "Edit PDF", desc: "" },
+  ]
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-white text-[#111]">
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+        <div className="max-w-[1320px] mx-auto px-6 h-[64px] flex items-center justify-between">
+          <div className="font-black text-xl">KYVORIX<span className="text-[#FF7A00]">APP</span></div>
+          <button className="bg-[#FF7A00] text-white text-sm font-bold px-5 py-2.5 rounded-lg">Get Started</button>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+      <section className="bg-[#FFFBF7] py-20 text-center">
+        <h1 className="text-5xl font-extrabold">Every tool you need<br/>to work with PDFs</h1>
+        <p className="mt-4 text-gray-600">31 tools + AI - kyvorixapp.com</p>
+      </section>
+      <div className="max-w-[1320px] mx-auto px-6 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-12">
+          {aiTools.map(t => (
+            <div key={t.name} className="rounded-2xl p-5 bg-[#111] text-white">
+              <div className="text-[10px] font-bold text-[#FF7A00]">{t.tag}</div>
+              <div className="mt-2 font-semibold text-[14px]">{t.name}</div>
+              <div className="text-[12px] text-gray-400 mt-1">{t.desc}</div>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
-  );
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {tools.map(t => (
+            <div key={t.name} className="border border-gray-100 rounded-2xl p-5 hover:border-[#FF7A00]">
+              <div className="font-semibold text-[14px]">{t.name}</div>
+              <div className="text-[12px] text-gray-500 mt-1">{t.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </main>
+  )
 }
